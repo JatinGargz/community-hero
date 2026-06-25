@@ -3,6 +3,8 @@
 > **Hyperlocal Civic Action & Verification Network**  
 > *A full-stack, AI-powered civic hazard reporting, tracking, and verification platform.*
 
+🌐 **[Live Demo Hosted on Google Cloud](https://community-hero-b612d.web.app)**
+
 ---
 
 ## 📖 Project Overview
