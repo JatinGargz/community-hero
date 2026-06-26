@@ -56,7 +56,7 @@ export default function Login({ onLogin, leaderboard = [] }) {
           </div>
           <div>
             <h1 style={{ fontSize: '26px', fontWeight: 800, color: 'white', letterSpacing: '-0.02em', marginBottom: '4px' }}>
-              Community Hero
+              Vigilant
             </h1>
             <p style={{ color: 'var(--text-muted)', fontSize: '13px' }}>
               Hyperlocal Civic Action Network
@@ -118,7 +118,7 @@ export default function Login({ onLogin, leaderboard = [] }) {
             style={{ width: '100%', padding: '14px', justifyContent: 'center' }}
           >
             <LogIn size={16} />
-            Enter Community Portal
+            Enter Vigilant Portal
           </button>
         </form>
 

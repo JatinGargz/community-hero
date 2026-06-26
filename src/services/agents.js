@@ -19,11 +19,11 @@ async function fileToGenerativePart(file) {
 
 // Check if Gemini API key exists
 export const getGeminiApiKey = () => {
-  return localStorage.getItem('COMMUNITY_HERO_GEMINI_KEY') || import.meta.env.VITE_GEMINI_API_KEY || '';
+  return localStorage.getItem('VIGILANT_GEMINI_KEY') || import.meta.env.VITE_GEMINI_API_KEY || '';
 };
 
 export const saveGeminiApiKey = (key) => {
-  localStorage.setItem('COMMUNITY_HERO_GEMINI_KEY', key);
+  localStorage.setItem('VIGILANT_GEMINI_KEY', key);
 };
 
 // Fallback Mock Analyzer when API Key is missing
@@ -105,7 +105,7 @@ export const analyzeIssueImage = async (file) => {
     
     const imagePart = await fileToGenerativePart(file);
     const prompt = `
-      You are the AI Vision Agent for "Community Hero", a hyperlocal civic issue tracking app.
+      You are the AI Vision Agent for "Vigilant", a hyperlocal civic issue tracking app.
       
       Your FIRST and most critical duty is to filter out spam, social photos, selfies, and unrelated uploads:
       - The municipal hazard (such as a pothole, road damage, overflowing garbage, water leak, broken light, or public safety hazard) MUST be the primary, clear subject of the photo.
@@ -181,7 +181,7 @@ Details of the Issue:
 This issue represents a public hazard and degrades the livability of the area. We kindly request the municipal department to review this report and schedule an inspection / resolution at the earliest convenience.
 
 Sincerely,
-Concerned Citizen (via Community Hero App)
+Concerned Citizen (via Vigilant App)
   `.trim();
 
   if (!apiKey) {
@@ -195,7 +195,7 @@ Concerned Citizen (via Community Hero App)
     const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     
     const prompt = `
-      You are the "Civic Grievance Drafting Agent" for Community Hero.
+      You are the "Civic Grievance Drafting Agent" for Vigilant.
       Write a professional, formal letter/email to the municipal department regarding the following civic issue:
       - Title: ${report.title}
       - Category: ${report.category}

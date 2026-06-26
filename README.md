@@ -1,4 +1,4 @@
-# 🛡️ Community Hero
+# 🛡️ Vigilant
 
 > **Hyperlocal Civic Action & Verification Network**  
 > *A full-stack, AI-powered civic hazard reporting, tracking, and verification platform.*
@@ -9,9 +9,9 @@
 
 ## 📖 Project Overview
 
-**Community Hero** is a hyperlocal citizen-engagement platform that empowers residents to report, verify, and track municipal infrastructure hazards (e.g., potholes, utility failures, waste overflow) in real-time. 
+**Vigilant** is a hyperlocal citizen-engagement platform that empowers residents to report, verify, and track municipal infrastructure hazards (e.g., potholes, utility failures, waste overflow) in real-time. 
 
-To overcome low engagement seen in traditional reporting portals, Community Hero introduces **Gamified Neighborhood Leagues (Karma Points)** and a **Sponsor-Funded Voucher Store**.
+To overcome low engagement seen in traditional reporting portals, Vigilant introduces **Gamified Neighborhood Leagues (Karma Points)** and a **Sponsor-Funded Voucher Store**.
 
 ---
 

@@ -129,7 +129,7 @@ const INITIAL_LEADERBOARD = [
 export default function App() {
   const [currentView, setCurrentView] = useState('dashboard');
   const [currentCity, setCurrentCity] = useState(() => {
-    const saved = localStorage.getItem('COMMUNITY_HERO_USER');
+    const saved = localStorage.getItem('VIGILANT_USER');
     if (saved) {
       const parsed = JSON.parse(saved);
       return parsed.city || 'Bengaluru';
@@ -137,7 +137,7 @@ export default function App() {
     return 'Bengaluru';
   });
   const [reports, setReports] = useState(() => {
-    const saved = localStorage.getItem('COMMUNITY_HERO_REPORTS');
+    const saved = localStorage.getItem('VIGILANT_REPORTS');
     const parsed = saved ? JSON.parse(saved) : INITIAL_REPORTS;
     
     // Auto-clean duplicates on load (specifically matching identical descriptions/addresses)
@@ -152,12 +152,12 @@ export default function App() {
     });
   });
   const [currentUser, setCurrentUser] = useState(() => {
-    const saved = localStorage.getItem('COMMUNITY_HERO_USER');
+    const saved = localStorage.getItem('VIGILANT_USER');
     return saved ? JSON.parse(saved) : null;
   });
   const [apiKey, setApiKey] = useState(getGeminiApiKey());
   const [leaderboard, setLeaderboard] = useState(() => {
-    const saved = localStorage.getItem('COMMUNITY_HERO_LEADERBOARD');
+    const saved = localStorage.getItem('VIGILANT_LEADERBOARD');
     return saved ? JSON.parse(saved) : INITIAL_LEADERBOARD;
   });
   const [tempKeyInput, setTempKeyInput] = useState('');
@@ -166,20 +166,20 @@ export default function App() {
 
   // Sync reports to localStorage
   useEffect(() => {
-    localStorage.setItem('COMMUNITY_HERO_REPORTS', JSON.stringify(reports));
+    localStorage.setItem('VIGILANT_REPORTS', JSON.stringify(reports));
   }, [reports]);
 
   // Sync leaderboard to localStorage
   useEffect(() => {
-    localStorage.setItem('COMMUNITY_HERO_LEADERBOARD', JSON.stringify(leaderboard));
+    localStorage.setItem('VIGILANT_LEADERBOARD', JSON.stringify(leaderboard));
   }, [leaderboard]);
 
   // Sync user profile to localStorage and dynamic leaderboard
   useEffect(() => {
     if (currentUser) {
-      localStorage.setItem('COMMUNITY_HERO_USER', JSON.stringify(currentUser));
+      localStorage.setItem('VIGILANT_USER', JSON.stringify(currentUser));
     } else {
-      localStorage.removeItem('COMMUNITY_HERO_USER');
+      localStorage.removeItem('VIGILANT_USER');
     }
   }, [currentUser]);
 
@@ -267,12 +267,12 @@ export default function App() {
   };
 
   const [redeemedCoupons, setRedeemedCoupons] = useState(() => {
-    const saved = localStorage.getItem('COMMUNITY_HERO_REDEEMED');
+    const saved = localStorage.getItem('VIGILANT_REDEEMED');
     return saved ? JSON.parse(saved) : {};
   });
 
   useEffect(() => {
-    localStorage.setItem('COMMUNITY_HERO_REDEEMED', JSON.stringify(redeemedCoupons));
+    localStorage.setItem('VIGILANT_REDEEMED', JSON.stringify(redeemedCoupons));
   }, [redeemedCoupons]);
 
   const handleRedeemReward = (perkId, cost) => {
@@ -420,7 +420,7 @@ export default function App() {
       <aside className="sidebar">
         <div className="logo-container" style={{ marginBottom: '28px' }}>
           <div className="logo-icon">🛡️</div>
-          <span className="logo-text">Community Hero</span>
+          <span className="logo-text">Vigilant</span>
         </div>
 
         {/* Active City Scope Selector */}
