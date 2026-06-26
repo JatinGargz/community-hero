@@ -533,11 +533,11 @@ export default function App() {
                 onChange={(e) => setTempKeyInput(e.target.value)}
                 style={{ 
                   width: '100%', 
-                  background: 'rgba(0,0,0,0.3)', 
-                  border: '1px solid var(--panel-border)', 
+                  background: '#ffffff', 
+                  border: '1px solid rgba(0, 0, 0, 0.12)', 
                   borderRadius: '4px', 
                   padding: '6px 8px', 
-                  color: 'white', 
+                  color: '#0a0a0a', 
                   fontSize: '11px' 
                 }}
               />
@@ -546,8 +546,8 @@ export default function App() {
                   type="submit" 
                   style={{ 
                     flexGrow: 1, 
-                    background: 'var(--primary)', 
-                    color: '#000', 
+                    background: '#0a0a0a', 
+                    color: '#ffffff', 
                     border: 'none', 
                     borderRadius: '4px', 
                     padding: '4px', 
@@ -565,7 +565,7 @@ export default function App() {
                 <button 
                   type="button" 
                   onClick={() => setShowKeyForm(false)}
-                  style={{ background: 'rgba(255,255,255,0.05)', color: 'var(--text-muted)', border: 'none', borderRadius: '4px', padding: '4px 8px', fontSize: '10px', cursor: 'pointer' }}
+                  style={{ background: 'rgba(0,0,0,0.05)', color: 'var(--text-muted)', border: 'none', borderRadius: '4px', padding: '4px 8px', fontSize: '10px', cursor: 'pointer' }}
                 >
                   Cancel
                 </button>

@@ -64,13 +64,13 @@ export default function RewardsShop({ userPoints, onRedeemReward, redeemedCoupon
             alignItems: 'center', 
             gap: '12px',
             borderLeft: '4px solid var(--secondary)',
-            background: 'rgba(20, 184, 166, 0.05)'
+            background: 'var(--secondary-glow)'
           }}
         >
           <Sparkles size={18} style={{ color: 'var(--secondary)' }} />
           <div>
             <span style={{ fontSize: '10px', color: 'var(--text-muted)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>Your Balance</span>
-            <span style={{ fontSize: '18px', fontWeight: 800, fontFamily: 'var(--font-display)', color: 'white' }}>
+            <span style={{ fontSize: '18px', fontWeight: 800, fontFamily: 'var(--font-display)', color: 'var(--text-main)' }}>
               {userPoints} Karma
             </span>
           </div>
@@ -82,9 +82,9 @@ export default function RewardsShop({ userPoints, onRedeemReward, redeemedCoupon
         <button
           onClick={() => setActiveTab('browse')}
           style={{
-            background: activeTab === 'browse' ? 'rgba(6, 182, 212, 0.1)' : 'transparent',
+            background: activeTab === 'browse' ? 'var(--primary-glow)' : 'transparent',
             color: activeTab === 'browse' ? 'var(--primary)' : 'var(--text-muted)',
-            border: activeTab === 'browse' ? '1px solid rgba(6, 182, 212, 0.2)' : '1px solid transparent',
+            border: activeTab === 'browse' ? '1px solid var(--panel-border-hover)' : '1px solid transparent',
             borderRadius: '6px',
             padding: '8px 16px',
             fontSize: '13px',
@@ -98,9 +98,9 @@ export default function RewardsShop({ userPoints, onRedeemReward, redeemedCoupon
         <button
           onClick={() => setActiveTab('redeemed')}
           style={{
-            background: activeTab === 'redeemed' ? 'rgba(6, 182, 212, 0.1)' : 'transparent',
+            background: activeTab === 'redeemed' ? 'var(--primary-glow)' : 'transparent',
             color: activeTab === 'redeemed' ? 'var(--primary)' : 'var(--text-muted)',
-            border: activeTab === 'redeemed' ? '1px solid rgba(6, 182, 212, 0.2)' : '1px solid transparent',
+            border: activeTab === 'redeemed' ? '1px solid var(--panel-border-hover)' : '1px solid transparent',
             borderRadius: '6px',
             padding: '8px 16px',
             fontSize: '13px',
@@ -144,7 +144,7 @@ export default function RewardsShop({ userPoints, onRedeemReward, redeemedCoupon
                     position: 'absolute', 
                     top: '12px', 
                     right: '12px',
-                    background: 'rgba(5, 7, 12, 0.8)',
+                    background: 'rgba(255, 255, 255, 0.95)',
                     backdropFilter: 'blur(4px)',
                     padding: '4px 10px',
                     borderRadius: '20px',
@@ -163,7 +163,7 @@ export default function RewardsShop({ userPoints, onRedeemReward, redeemedCoupon
                     <span style={{ fontSize: '11px', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
                       Sponsored by {perk.sponsor}
                     </span>
-                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'white', marginTop: '4px', marginBottom: '8px' }}>
+                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-main)', marginTop: '4px', marginBottom: '8px' }}>
                       {perk.title}
                     </h3>
                     <p style={{ fontSize: '12.5px', color: 'var(--text-muted)', lineHeight: '1.4' }}>
@@ -201,7 +201,7 @@ export default function RewardsShop({ userPoints, onRedeemReward, redeemedCoupon
                       <button 
                         disabled 
                         style={{ 
-                          background: 'rgba(255,255,255,0.03)', 
+                          background: 'rgba(0,0,0,0.02)', 
                           color: 'var(--text-dim)', 
                           border: '1px solid var(--panel-border)', 
                           borderRadius: '6px', 
@@ -262,7 +262,7 @@ export default function RewardsShop({ userPoints, onRedeemReward, redeemedCoupon
                     </div>
                     <div>
                       <span style={{ fontSize: '10px', color: 'var(--text-dim)', textTransform: 'uppercase' }}>{perk.sponsor}</span>
-                      <h4 style={{ fontSize: '15px', fontWeight: 600, color: 'white' }}>{perk.title}</h4>
+                      <h4 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-main)' }}>{perk.title}</h4>
                       <p style={{ fontSize: '11px', color: 'var(--severity-resolved)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px', marginTop: '2px' }}>
                         <CheckCircle2 size={10} /> Active Voucher
                       </p>
@@ -270,7 +270,7 @@ export default function RewardsShop({ userPoints, onRedeemReward, redeemedCoupon
                   </div>
 
                   {/* Coupon Code Reveal Card */}
-                  <div style={{ background: 'rgba(0,0,0,0.3)', border: '1px dashed var(--severity-resolved-border)', padding: '12px 24px', borderRadius: '8px', textAlign: 'center', minWidth: '180px' }}>
+                  <div style={{ background: 'rgba(0,0,0,0.02)', border: '1px dashed var(--severity-resolved-border)', padding: '12px 24px', borderRadius: '8px', textAlign: 'center', minWidth: '180px' }}>
                     <span style={{ fontSize: '9px', color: 'var(--text-dim)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Voucher Code</span>
                     <span style={{ fontSize: '15px', fontWeight: 800, fontFamily: 'var(--font-display)', color: 'var(--primary)', letterSpacing: '0.1em' }}>
                       {code}
