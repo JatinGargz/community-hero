@@ -329,7 +329,7 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                 padding: '50px 20px', 
                 textAlign: 'center', 
                 cursor: 'pointer',
-                background: '#ffffff',
+                background: 'rgba(255,255,255,0.01)',
                 transition: 'var(--transition-smooth)',
                 display: 'flex',
                 flexDirection: 'column',
@@ -339,11 +339,11 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'var(--primary)';
-                e.currentTarget.style.background = 'rgba(88, 87, 249, 0.02)';
+                e.currentTarget.style.background = 'rgba(6, 182, 212, 0.02)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = 'var(--panel-border)';
-                e.currentTarget.style.background = '#ffffff';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.01)';
               }}
             >
               <input 
@@ -353,7 +353,7 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                 accept="image/*" 
                 style={{ display: 'none' }} 
               />
-              <div style={{ background: 'rgba(88, 87, 249, 0.1)', color: 'var(--primary)', padding: '14px', borderRadius: '50%' }}>
+              <div style={{ background: 'rgba(6, 182, 212, 0.1)', color: 'var(--primary)', padding: '14px', borderRadius: '50%' }}>
                 <Upload size={24} />
               </div>
               <div>
@@ -423,8 +423,8 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                 onClick={stopCamera}
                 style={{ 
                   flexGrow: 1, 
-                  background: '#ffffff', 
-                  color: 'var(--text-main)', 
+                  background: 'rgba(255,255,255,0.05)', 
+                  color: 'white', 
                   border: '1px solid var(--panel-border)', 
                   borderRadius: '6px', 
                   padding: '12px', 
@@ -533,8 +533,8 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                 disabled={isAnalyzing}
                 style={{ 
                   flexGrow: 1, 
-                  background: '#ffffff', 
-                  color: 'var(--text-main)', 
+                  background: 'rgba(255,255,255,0.05)', 
+                  color: 'white', 
                   border: '1px solid var(--panel-border)', 
                   borderRadius: '6px', 
                   padding: '12px', 
@@ -589,7 +589,7 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
               <div style={{ background: 'rgba(255, 74, 90, 0.1)', color: 'var(--severity-critical)', padding: '20px', borderRadius: '50%' }}>
                 <AlertTriangle size={36} />
               </div>
-              <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-main)' }}>Upload Rejected by AI Guard</h2>
+              <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'white' }}>Upload Rejected by AI Guard</h2>
               
               <div style={{ width: '100%', maxWidth: '280px', height: '180px', borderRadius: '8px', overflow: 'hidden', margin: '10px 0', border: '1px solid var(--panel-border)' }}>
                 <img src={previewUrl} alt="Rejection preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -603,7 +603,7 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                 <button 
                   onClick={resetForm}
                   className="glow-button"
-                  style={{ background: '#ffffff', color: 'var(--text-main)', border: '1px solid var(--panel-border)', margin: '0 auto', boxShadow: 'none', animation: 'none' }}
+                  style={{ background: 'rgba(255,255,255,0.05)', color: 'white', border: '1px solid var(--panel-border)', margin: '0 auto', boxShadow: 'none', animation: 'none' }}
                 >
                   Upload Different Image
                 </button>
@@ -622,7 +622,7 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                     <img src={previewUrl} alt="Report scene" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
 
-                  <div style={{ background: 'rgba(88, 87, 249, 0.08)', border: '1px solid rgba(88, 87, 249, 0.15)', padding: '16px', borderRadius: '8px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <div style={{ background: 'rgba(6,182,212,0.08)', border: '1px solid rgba(6,182,212,0.15)', padding: '16px', borderRadius: '8px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--primary)', fontSize: '13px', fontWeight: 700 }}>
                       <Sparkles size={14} />
                       Gemini Vision Verified
@@ -650,7 +650,7 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                       value={editTitle}
                       onChange={(e) => setEditTitle(e.target.value)}
                       required
-                      style={{ width: '100%', fontSize: '14px' }}
+                      style={{ width: '100%', background: 'rgba(0,0,0,0.3)', border: '1px solid var(--panel-border)', borderRadius: '6px', padding: '10px 12px', color: 'white', fontSize: '14px' }}
                     />
                   </div>
 
@@ -661,7 +661,7 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                       <select
                         value={editCategory}
                         onChange={(e) => setEditCategory(e.target.value)}
-                        style={{ width: '100%', fontSize: '14px', cursor: 'pointer' }}
+                        style={{ width: '100%', background: 'rgba(0,0,0,0.3)', border: '1px solid var(--panel-border)', borderRadius: '6px', padding: '10px 12px', color: 'white', fontSize: '14px', cursor: 'pointer' }}
                       >
                         <option value="Roads & Infrastructure">Roads & Infrastructure</option>
                         <option value="Sanitation & Waste">Sanitation & Waste</option>
@@ -676,7 +676,7 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                       <select
                         value={editSeverity}
                         onChange={(e) => setEditSeverity(e.target.value)}
-                        style={{ width: '100%', fontSize: '14px', cursor: 'pointer' }}
+                        style={{ width: '100%', background: 'rgba(0,0,0,0.3)', border: '1px solid var(--panel-border)', borderRadius: '6px', padding: '10px 12px', color: 'white', fontSize: '14px', cursor: 'pointer' }}
                       >
                         <option value="Critical">🚨 Critical Hazard</option>
                         <option value="High">🟠 High Urgency</option>
@@ -694,7 +694,7 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                       value={editAddress}
                       onChange={(e) => setEditAddress(e.target.value)}
                       required
-                      style={{ width: '100%', fontSize: '14px' }}
+                      style={{ width: '100%', background: 'rgba(0,0,0,0.3)', border: '1px solid var(--panel-border)', borderRadius: '6px', padding: '10px 12px', color: 'white', fontSize: '14px' }}
                     />
                   </div>
 
@@ -706,7 +706,7 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                       onChange={(e) => setEditDescription(e.target.value)}
                       required
                       rows={3}
-                      style={{ width: '100%', fontSize: '14px', resize: 'vertical' }}
+                      style={{ width: '100%', background: 'rgba(0,0,0,0.3)', border: '1px solid var(--panel-border)', borderRadius: '6px', padding: '10px 12px', color: 'white', fontSize: '14px', resize: 'vertical' }}
                     />
                   </div>
 
@@ -720,8 +720,8 @@ export default function ReportIssue({ reports = [], onAddReport, setView, curren
                   type="button"
                   onClick={resetForm}
                   style={{ 
-                    background: '#ffffff', 
-                    color: 'var(--text-main)', 
+                    background: 'rgba(255,255,255,0.05)', 
+                    color: 'white', 
                     border: '1px solid var(--panel-border)', 
                     borderRadius: '6px', 
                     padding: '10px 20px', 

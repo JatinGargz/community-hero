@@ -30,7 +30,7 @@ export default function Login({ onLogin, leaderboard = [] }) {
         padding: '40px', 
         borderRadius: 'var(--radius-lg)', 
         border: '1px solid var(--panel-border)',
-        boxShadow: '0 25px 50px rgba(0, 0, 0, 0.04), 0 0 40px rgba(88, 87, 249, 0.03)',
+        boxShadow: '0 25px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(6, 182, 212, 0.05)',
         display: 'flex',
         flexDirection: 'column',
         gap: '28px',
@@ -48,14 +48,14 @@ export default function Login({ onLogin, leaderboard = [] }) {
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '24px',
-            color: '#ffffff',
-            boxShadow: '0 0 25px rgba(88, 87, 249, 0.4)',
+            color: '#030712',
+            boxShadow: '0 0 25px rgba(6, 182, 212, 0.45)',
             animation: 'pulseMarkerCritical 3s infinite'
           }}>
             🛡️
           </div>
           <div>
-            <h1 style={{ fontSize: '26px', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', marginBottom: '4px' }}>
+            <h1 style={{ fontSize: '26px', fontWeight: 800, color: 'white', letterSpacing: '-0.02em', marginBottom: '4px' }}>
               Community Hero
             </h1>
             <p style={{ color: 'var(--text-muted)', fontSize: '13px' }}>
@@ -96,8 +96,8 @@ export default function Login({ onLogin, leaderboard = [] }) {
               onChange={(e) => setCityInput(e.target.value)}
               style={{
                 width: '100%',
-                background: '#ffffff',
-                color: 'var(--text-main)',
+                background: 'rgba(0,0,0,0.3)',
+                color: 'white',
                 border: '1px solid var(--panel-border)',
                 borderRadius: '6px',
                 padding: '12px 16px',
@@ -105,10 +105,10 @@ export default function Login({ onLogin, leaderboard = [] }) {
                 cursor: 'pointer'
               }}
             >
-              <option value="Bengaluru" style={{ background: '#ffffff', color: '#0a0a0a' }}>📍 Bengaluru</option>
-              <option value="Chennai" style={{ background: '#ffffff', color: '#0a0a0a' }}>📍 Chennai</option>
-              <option value="Delhi" style={{ background: '#ffffff', color: '#0a0a0a' }}>📍 Delhi</option>
-              <option value="Mumbai" style={{ background: '#ffffff', color: '#0a0a0a' }}>📍 Mumbai</option>
+              <option value="Bengaluru" style={{ background: '#0b0f19', color: '#fff' }}>📍 Bengaluru</option>
+              <option value="Chennai" style={{ background: '#0b0f19', color: '#fff' }}>📍 Chennai</option>
+              <option value="Delhi" style={{ background: '#0b0f19', color: '#fff' }}>📍 Delhi</option>
+              <option value="Mumbai" style={{ background: '#0b0f19', color: '#fff' }}>📍 Mumbai</option>
             </select>
           </div>
 
@@ -137,7 +137,7 @@ export default function Login({ onLogin, leaderboard = [] }) {
               const gradient = i === 0 ? 'linear-gradient(135deg, #fbbf24, #d97706)' : 
                                i === 1 ? 'linear-gradient(135deg, #cbd5e1, #64748b)' :
                                i === 2 ? 'linear-gradient(135deg, #d97706, #b45309)' :
-                               'linear-gradient(135deg, var(--primary), var(--secondary))';
+                               'linear-gradient(135deg, #06b6d4, #0891b2)';
 
               return (
                 <button
@@ -150,19 +150,19 @@ export default function Login({ onLogin, leaderboard = [] }) {
                     justifyContent: 'space-between',
                     padding: '10px 14px',
                     borderRadius: '8px',
-                    background: 'rgba(0,0,0,0.01)',
+                    background: 'rgba(255,255,255,0.02)',
                     border: '1px solid var(--panel-border)',
-                    color: 'var(--text-main)',
+                    color: 'white',
                     cursor: 'pointer',
                     transition: 'var(--transition-smooth)',
                     textAlign: 'left'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(88, 87, 249, 0.05)';
-                    e.currentTarget.style.borderColor = 'rgba(88, 87, 249, 0.2)';
+                    e.currentTarget.style.background = 'rgba(6, 182, 212, 0.05)';
+                    e.currentTarget.style.borderColor = 'rgba(6, 182, 212, 0.2)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(0,0,0,0.01)';
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
                     e.currentTarget.style.borderColor = 'var(--panel-border)';
                   }}
                 >
@@ -172,7 +172,7 @@ export default function Login({ onLogin, leaderboard = [] }) {
                       height: '28px', 
                       borderRadius: '50%', 
                       background: gradient, 
-                      color: '#ffffff', 
+                      color: '#000', 
                       display: 'flex', 
                       alignItems: 'center', 
                       justifyContent: 'center', 

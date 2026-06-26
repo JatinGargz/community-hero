@@ -118,8 +118,8 @@ export default function MapView({ reports, onVote, onDelete, currentUser, curren
             value={filterCategory} 
             onChange={(e) => setFilterCategory(e.target.value)}
             style={{ 
-              background: '#ffffff', 
-              color: 'var(--text-main)', 
+              background: 'rgba(0,0,0,0.3)', 
+              color: 'white', 
               border: '1px solid var(--panel-border)', 
               borderRadius: '4px', 
               padding: '4px 8px', 
@@ -136,8 +136,8 @@ export default function MapView({ reports, onVote, onDelete, currentUser, curren
             value={filterSeverity} 
             onChange={(e) => setFilterSeverity(e.target.value)}
             style={{ 
-              background: '#ffffff', 
-              color: 'var(--text-main)', 
+              background: 'rgba(0,0,0,0.3)', 
+              color: 'white', 
               border: '1px solid var(--panel-border)', 
               borderRadius: '4px', 
               padding: '4px 8px', 
@@ -164,10 +164,10 @@ export default function MapView({ reports, onVote, onDelete, currentUser, curren
             style={{ height: '100%', width: '100%' }}
           >
             <ChangeMapView center={center} />
-            {/* Light themed map tiles (CartoDB Positron) */}
+            {/* Dark themed map tiles (CartoDB Dark Matter) */}
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+              url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
             />
 
             {filteredReports.map(rep => {

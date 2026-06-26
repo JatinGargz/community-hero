@@ -70,7 +70,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
       case 'Critical': return { bg: 'var(--severity-critical-bg)', color: 'var(--severity-critical)' };
       case 'High': return { bg: 'var(--severity-medium-bg)', color: 'var(--severity-medium)' };
       case 'Medium': return { bg: 'var(--severity-low-bg)', color: 'var(--severity-low)' };
-      default: return { bg: 'rgba(0,0,0,0.03)', color: 'var(--text-muted)' };
+      default: return { bg: 'rgba(255,255,255,0.05)', color: 'var(--text-muted)' };
     }
   };
 
@@ -78,9 +78,9 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
     switch (status) {
       case 'Resolved': return { bg: 'var(--severity-resolved-bg)', color: 'var(--severity-resolved)' };
       case 'Pending Verification': return { bg: 'var(--severity-medium-bg)', color: 'var(--severity-medium)' };
-      case 'In Progress': return { bg: 'var(--primary-glow)', color: 'var(--primary)' };
-      case 'Reported': return { bg: 'rgba(0,0,0,0.03)', color: 'var(--text-muted)' };
-      default: return { bg: 'rgba(0,0,0,0.01)', color: 'var(--text-dim)' };
+      case 'In Progress': return { bg: 'rgba(6, 182, 212, 0.1)', color: 'var(--primary)' };
+      case 'Reported': return { bg: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-muted)' };
+      default: return { bg: 'rgba(255, 255, 255, 0.03)', color: 'var(--text-dim)' };
     }
   };
 
@@ -107,7 +107,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
         
         {/* Metric 1: Total Reports */}
         <div className="glass-panel" style={{ padding: '24px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <div style={{ background: 'rgba(88, 87, 249, 0.1)', color: 'var(--primary)', padding: '12px', borderRadius: '12px' }}>
+          <div style={{ background: 'rgba(6, 182, 212, 0.1)', color: 'var(--primary)', padding: '12px', borderRadius: '12px' }}>
             <ShieldAlert size={28} />
           </div>
           <div>
@@ -140,7 +140,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
 
         {/* Metric 4: Trust Index */}
         <div className="glass-panel" style={{ padding: '24px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <div style={{ background: 'rgba(156, 52, 240, 0.1)', color: 'var(--secondary)', padding: '12px', borderRadius: '12px' }}>
+          <div style={{ background: 'rgba(20, 184, 166, 0.1)', color: 'var(--secondary)', padding: '12px', borderRadius: '12px' }}>
             <Award size={28} />
           </div>
           <div>
@@ -215,7 +215,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
                    )}
                   
                   {/* Report Photo Thumbnail */}
-                  <div style={{ width: '120px', height: '100px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0, position: 'relative', background: 'rgba(0,0,0,0.05)' }}>
+                  <div style={{ width: '120px', height: '100px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0, position: 'relative', background: 'rgba(0,0,0,0.5)' }}>
                     <img 
                       src={rep.imageUrl} 
                       alt={rep.title} 
@@ -265,7 +265,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
                     </div>
 
                     {/* Report Stats & Actions */}
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--panel-border)', paddingTop: '10px', marginTop: '10px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '10px', marginTop: '10px' }}>
                       <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: 'var(--text-muted)' }}>
                         <span>🔥 <b>{rep.consensusScore}%</b> Consensus</span>
                         <span>👍 <b>{rep.votes}</b> Verifications</span>
@@ -274,7 +274,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
                       <button 
                         onClick={() => onVote(rep.id)}
                         style={{
-                          background: alreadyVoted ? 'rgba(88, 87, 249, 0.15)' : '#ffffff',
+                          background: alreadyVoted ? 'rgba(6, 182, 212, 0.15)' : 'rgba(255,255,255,0.05)',
                           color: alreadyVoted ? 'var(--primary)' : 'var(--text-main)',
                           border: '1px solid ' + (alreadyVoted ? 'var(--primary)' : 'var(--panel-border)'),
                           borderRadius: '6px',
@@ -341,8 +341,8 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
                       justifyContent: 'space-between',
                       padding: '8px 12px',
                       borderRadius: '8px',
-                      background: isCurrentUser ? 'rgba(88, 87, 249, 0.08)' : 'transparent',
-                      border: isCurrentUser ? '1px solid rgba(88, 87, 249, 0.2)' : '1px solid transparent'
+                      background: isCurrentUser ? 'rgba(6, 182, 212, 0.08)' : 'transparent',
+                      border: isCurrentUser ? '1px solid rgba(6, 182, 212, 0.2)' : '1px solid transparent'
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -356,7 +356,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
                         justifyContent: 'center', 
                         fontWeight: 700,
                         fontSize: '12px',
-                        background: user.cityRank === 1 ? 'gold' : user.cityRank === 2 ? '#c0c0c0' : user.cityRank === 3 ? '#cd7f32' : 'rgba(0,0,0,0.05)',
+                        background: user.cityRank === 1 ? 'gold' : user.cityRank === 2 ? '#c0c0c0' : user.cityRank === 3 ? '#cd7f32' : 'rgba(255,255,255,0.05)',
                         color: user.cityRank <= 3 ? '#000' : 'var(--text-muted)'
                       }}>
                         {user.cityRank}
@@ -369,7 +369,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
                         </h4>
                         <div style={{ display: 'flex', gap: '4px', marginTop: '2px' }}>
                           {user.badges.map(b => (
-                            <span key={b} style={{ fontSize: '9px', background: 'rgba(0,0,0,0.04)', padding: '1px 4px', borderRadius: '4px', color: 'var(--text-muted)' }}>
+                            <span key={b} style={{ fontSize: '9px', background: 'rgba(255,255,255,0.05)', padding: '1px 4px', borderRadius: '4px', color: 'var(--text-muted)' }}>
                               {b}
                             </span>
                           ))}
@@ -391,7 +391,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
             })()}
 
             {/* Gamification Tip Banner */}
-            <div style={{ background: 'linear-gradient(135deg, rgba(88,87,249,0.08), rgba(156,52,240,0.08))', padding: '12px', borderRadius: '8px', border: '1px solid rgba(88, 87, 249, 0.15)', display: 'flex', gap: '10px' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(6,182,212,0.1), rgba(20,184,166,0.1))', padding: '12px', borderRadius: '8px', border: '1px solid rgba(6, 182, 212, 0.15)', display: 'flex', gap: '10px' }}>
               <Sparkles size={20} style={{ color: 'var(--primary)', flexShrink: 0 }} />
               <p style={{ fontSize: '11px', color: 'var(--text-muted)', lineHeight: '1.4' }}>
                 Earn <b>50 Karma Points</b> by reporting new issues and <b>10 Karma Points</b> by verifying reports. Keep our neighborhood safe!
@@ -411,7 +411,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
               <span style={{ fontSize: '10px', color: 'var(--text-dim)', display: 'block', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>
                 Primary Risk Hotspot
               </span>
-              <span style={{ fontSize: '13px', color: 'var(--text-main)', fontWeight: 700 }}>
+              <span style={{ fontSize: '13px', color: 'white', fontWeight: 700 }}>
                 📍 {forecast.hotspot}
               </span>
             </div>
@@ -431,7 +431,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
               </div>
               
               {/* Risk Meter Progress Bar */}
-              <div style={{ height: '6px', background: 'rgba(0,0,0,0.05)', borderRadius: '3px', overflow: 'hidden' }}>
+              <div style={{ height: '6px', background: 'rgba(255,255,255,0.05)', borderRadius: '3px', overflow: 'hidden' }}>
                 <div 
                   className="risk-pulse-bar"
                   style={{ 
@@ -445,7 +445,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', background: 'rgba(0,0,0,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid var(--panel-border)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', background: 'rgba(0,0,0,0.15)', padding: '12px', borderRadius: '6px', border: '1px solid var(--panel-border)' }}>
               <div style={{ borderRight: '1px solid var(--panel-border)', paddingRight: '8px' }}>
                 <span style={{ fontSize: '9px', color: 'var(--text-dim)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>
                   Est. Resolution
@@ -458,7 +458,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
                 <span style={{ fontSize: '9px', color: 'var(--text-dim)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>
                   Queue Workload
                 </span>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-main)', display: 'block', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: 'white', display: 'block', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>
                   📈 {forecast.queueLoad}
                 </span>
               </div>
@@ -473,7 +473,7 @@ export default function Dashboard({ reports, leaderboard, setView, onVote, onDel
               </span>
             </div>
 
-            <div style={{ background: 'rgba(88,87,249,0.05)', border: '1px solid rgba(88,87,249,0.15)', padding: '12px', borderRadius: '8px', fontSize: '11px', color: 'var(--text-muted)', lineHeight: '1.4' }}>
+            <div style={{ background: 'rgba(6,182,212,0.05)', border: '1px solid rgba(6,182,212,0.15)', padding: '12px', borderRadius: '8px', fontSize: '11px', color: 'var(--text-muted)', lineHeight: '1.4' }}>
               💡 <b>AI Recommendation:</b> {forecast.alertMessage}
             </div>
           </div>

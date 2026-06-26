@@ -87,16 +87,16 @@ export default function CivicInbox({ reports, updateLetter }) {
                     padding: '12px',
                     borderRadius: '8px',
                     cursor: 'pointer',
-                    background: isSelected ? 'var(--primary-glow)' : 'transparent',
+                    background: isSelected ? 'rgba(6, 182, 212, 0.1)' : 'transparent',
                     border: '1px solid ' + (isSelected ? 'var(--primary)' : 'var(--panel-border)'),
                     transition: 'var(--transition-smooth)'
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '4px' }}>
-                    <h4 style={{ fontSize: '13px', fontWeight: 600, color: isSelected ? 'var(--primary)' : 'var(--text-main)', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden', width: '130px' }}>
+                    <h4 style={{ fontSize: '13px', fontWeight: 600, color: isSelected ? 'var(--primary)' : 'white', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden', width: '130px' }}>
                       {rep.title}
                     </h4>
-                    <span style={{ fontSize: '9px', background: 'rgba(0, 0, 0, 0.04)', padding: '2px 4px', borderRadius: '4px', color: 'var(--text-muted)' }}>
+                    <span style={{ fontSize: '9px', background: 'rgba(255,255,255,0.05)', padding: '2px 4px', borderRadius: '4px', color: 'var(--text-muted)' }}>
                       {rep.severity}
                     </span>
                   </div>
@@ -124,19 +124,19 @@ export default function CivicInbox({ reports, updateLetter }) {
                   <span style={{ fontSize: '11px', fontWeight: 600 }}>1. Logged</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <div style={{ width: '20px', height: '20px', borderRadius: '50%', background: selectedReport.civicLetter ? 'var(--severity-resolved-bg)' : 'rgba(0,0,0,0.04)', color: selectedReport.civicLetter ? 'var(--severity-resolved)' : 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyCenter: 'center', fontSize: '11px', fontWeight: 700 }}>
+                  <div style={{ width: '20px', height: '20px', borderRadius: '50%', background: selectedReport.civicLetter ? 'var(--severity-resolved-bg)' : 'rgba(255,255,255,0.05)', color: selectedReport.civicLetter ? 'var(--severity-resolved)' : 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyCenter: 'center', fontSize: '11px', fontWeight: 700 }}>
                     {selectedReport.civicLetter ? '✓' : '2'}
                   </div>
                   <span style={{ fontSize: '11px', color: selectedReport.civicLetter ? 'var(--text-main)' : 'var(--text-dim)', fontWeight: 600 }}>2. AI Drafted</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <div style={{ width: '20px', height: '20px', borderRadius: '50%', background: selectedReport.civicLetter ? 'var(--severity-resolved-bg)' : 'rgba(0,0,0,0.04)', color: selectedReport.civicLetter ? 'var(--severity-resolved)' : 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyCenter: 'center', fontSize: '11px', fontWeight: 700 }}>
+                  <div style={{ width: '20px', height: '20px', borderRadius: '50%', background: selectedReport.civicLetter ? 'var(--severity-resolved-bg)' : 'rgba(255,255,255,0.05)', color: selectedReport.civicLetter ? 'var(--severity-resolved)' : 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyCenter: 'center', fontSize: '11px', fontWeight: 700 }}>
                     {selectedReport.civicLetter ? '✓' : '3'}
                   </div>
                   <span style={{ fontSize: '11px', color: selectedReport.civicLetter ? 'var(--text-main)' : 'var(--text-dim)', fontWeight: 600 }}>3. Routed</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <div style={{ width: '20px', height: '20px', borderRadius: '50%', background: letterSentStatus === 'sent' ? 'var(--severity-resolved-bg)' : 'rgba(0,0,0,0.04)', color: letterSentStatus === 'sent' ? 'var(--severity-resolved)' : 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyCenter: 'center', fontSize: '11px', fontWeight: 700 }}>
+                  <div style={{ width: '20px', height: '20px', borderRadius: '50%', background: letterSentStatus === 'sent' ? 'var(--severity-resolved-bg)' : 'rgba(255,255,255,0.05)', color: letterSentStatus === 'sent' ? 'var(--severity-resolved)' : 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyCenter: 'center', fontSize: '11px', fontWeight: 700 }}>
                     {letterSentStatus === 'sent' ? '✓' : '4'}
                   </div>
                   <span style={{ fontSize: '11px', color: letterSentStatus === 'sent' ? 'var(--text-main)' : 'var(--text-dim)', fontWeight: 600 }}>4. Dispatched</span>
@@ -144,10 +144,10 @@ export default function CivicInbox({ reports, updateLetter }) {
               </div>
 
               {/* Routing detail */}
-              <div style={{ background: 'rgba(0,0,0,0.02)', border: '1px solid var(--panel-border)', padding: '16px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyBetween: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '16px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyBetween: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
                 <div>
                   <span style={{ fontSize: '11px', color: 'var(--text-dim)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>Routing Category</span>
-                  <span style={{ fontSize: '13px', color: 'var(--text-main)', fontWeight: 600 }}>{selectedReport.category}</span>
+                  <span style={{ fontSize: '13px', color: 'white', fontWeight: 600 }}>{selectedReport.category}</span>
                 </div>
                 <ArrowRight size={14} style={{ color: 'var(--text-dim)' }} />
                 <div>
@@ -170,7 +170,7 @@ export default function CivicInbox({ reports, updateLetter }) {
                     <div style={{ display: 'flex', gap: '8px' }}>
                       <button 
                         onClick={copyToClipboard}
-                        style={{ background: 'var(--bg-dark)', color: 'var(--text-main)', border: '1px solid var(--panel-border)', borderRadius: '4px', padding: '4px 8px', fontSize: '11px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}
+                        style={{ background: 'rgba(255,255,255,0.05)', color: 'white', border: '1px solid var(--panel-border)', borderRadius: '4px', padding: '4px 8px', fontSize: '11px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}
                       >
                         <Copy size={12} />
                         Copy
@@ -180,10 +180,10 @@ export default function CivicInbox({ reports, updateLetter }) {
                 </div>
 
                 {/* Content board */}
-                <div style={{ minHeight: '220px', border: '1px solid var(--panel-border)', borderRadius: '8px', background: '#ffffff', padding: '20px', position: 'relative' }}>
+                <div style={{ minHeight: '220px', border: '1px solid var(--panel-border)', borderRadius: '8px', background: 'rgba(0,0,0,0.35)', padding: '20px', position: 'relative' }}>
                   
                   {isDrafting && (
-                    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(4px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyCenter: 'center', gap: '12px', borderRadius: '8px', zIndex: 10 }}>
+                    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(9, 13, 22, 0.8)', backdropFilter: 'blur(4px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyCenter: 'center', gap: '12px', borderRadius: '8px', zIndex: 10 }}>
                       <RefreshCw size={24} style={{ animation: 'spin 1.5s linear infinite', color: 'var(--primary)' }} />
                       <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Civic Routing Agent drafting official grievance letter...</span>
                     </div>
@@ -194,7 +194,7 @@ export default function CivicInbox({ reports, updateLetter }) {
                       whiteSpace: 'pre-wrap', 
                       fontFamily: 'Courier New, monospace', 
                       fontSize: '12.5px', 
-                      color: 'var(--text-main)', 
+                      color: '#e2e8f0', 
                       lineHeight: '1.5' 
                     }}>
                       {selectedReport.civicLetter}
@@ -203,7 +203,7 @@ export default function CivicInbox({ reports, updateLetter }) {
                     <div style={{ height: '180px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyCenter: 'center', gap: '16px', color: 'var(--text-muted)' }}>
                       <Sparkles size={32} style={{ color: 'var(--severity-medium)', opacity: 0.8 }} />
                       <div style={{ textAlign: 'center' }}>
-                        <p style={{ fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' }}>Draft not generated yet</p>
+                        <p style={{ fontWeight: 600, color: 'white', marginBottom: '4px' }}>Draft not generated yet</p>
                         <p style={{ fontSize: '11.5px', maxWidth: '300px' }}>Instruct the Civic Routing Agent to synthesize the report parameters and draft the formal petition.</p>
                       </div>
                       <button 
@@ -225,7 +225,7 @@ export default function CivicInbox({ reports, updateLetter }) {
                 <div style={{ display: 'flex', justifyContent: 'flex-end', borderTop: '1px solid var(--panel-border)', paddingTop: '20px', gap: '12px' }}>
                   
                   {letterSentStatus === 'sending' && (
-                    <button disabled style={{ background: 'rgba(0,0,0,0.02)', color: 'var(--text-muted)', border: '1px solid var(--panel-border)', borderRadius: '6px', padding: '10px 20px', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <button disabled style={{ background: 'rgba(255,255,255,0.05)', color: 'var(--text-muted)', border: '1px solid var(--panel-border)', borderRadius: '6px', padding: '10px 20px', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <RefreshCw size={14} style={{ animation: 'spin 1.5s linear infinite' }} />
                       Dispatching to Municipal System...
                     </button>
